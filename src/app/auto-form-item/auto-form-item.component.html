@@ -1,0 +1,26 @@
+<ng-container [ngSwitch]="config.type">
+  <nz-form-item *ngSwitchCase="'DATEPICKER'">
+    <nz-form-label>{{config.label}}</nz-form-label>
+    <nz-form-control>
+      <nz-date-picker>
+        class="full-width"></nz-date-picker>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item *ngSwitchCase="'SELECT'">
+    <nz-form-label>{{config.label}}</nz-form-label>
+    <nz-form-control>
+      <nz-select class="full-width">
+        <nz-option *ngFor="let option of config.options"
+                   [nzValue]="option.value"
+                   [nzLabel]="option.label"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item *ngSwitchCase="'INPUT'">
+    <nz-form-label>{{config.label}}</nz-form-label>
+    <nz-form-control>
+      <input class="full-width"
+             nz-input>
+    </nz-form-control>
+  </nz-form-item>
+</ng-container>

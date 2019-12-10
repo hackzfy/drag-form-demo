@@ -1,0 +1,58 @@
+<form nz-form
+      [formGroup]="form">
+  <nz-form-item>
+    <nz-form-label>label</nz-form-label>
+    <nz-form-control>
+      <input nz-input
+             formControlName="label">
+    </nz-form-control>
+  </nz-form-item>
+
+  <ng-container *ngIf="showOptions">
+    <div formArrayName="options">
+      <ng-container *ngFor="let control of form.get('options')?.controls; let i = index">
+        <div [formGroupName]="i">
+          <nz-form-item>
+            <nz-form-label [nzFor]="i">option {{i+1}}
+            </nz-form-label>
+            <nz-form-control>
+              <input nz-input
+                     class="dynamic-input"
+                     placeholder="label"
+                     formControlName="label" />
+
+              <input nz-input
+                     class="dynamic-input"
+                     placeholder="value"
+                     formControlName="value" />
+
+              <i nz-icon
+                 nzType="minus-circle-o"
+                 class="dynamic-delete-button"
+                 (click)="removeField(i)"></i>
+            </nz-form-control>
+          </nz-form-item>
+        </div>
+      </ng-container>
+
+    </div>
+
+    <nz-form-item>
+      <nz-form-control>
+        <button nz-button
+                nzType="dashed"
+                class="add-button"
+                (click)="addField()">
+          <i nz-icon
+             nzType="plus"></i>
+          Add option
+        </button>
+      </nz-form-control>
+    </nz-form-item>
+
+
+  </ng-container>
+  <button nz-button
+          nzType="primary"
+          (click)="onSubmit()">submit</button>
+</form>
