@@ -1,0 +1,66 @@
+<div class="main">
+  <div class="header">
+    <h1 class="page-title">文化旅游企业安全信息公示平台</h1>
+
+    <div class="page-info">
+      <div class="company-name">XXX交通运输有限公司</div>
+      <div>2018年9月27日 14:30 星期四</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="notification"></div>
+
+    <div class="block-container">
+      <div class="block-col">
+        <div class="block">
+          <div class="title">作业活动风险值对比图</div>
+          <div>
+            <nz-radio-group [(ngModel)]="radioValue" class="radio-group">
+              <label nz-radio [nzValue]="o.value" *ngFor="let o of options">{{ o.label }}</label>
+            </nz-radio-group>
+          </div>
+          <div appXalChart [config]="config1" [data]="data1" class="chart-container"></div>
+        </div>
+        <div class="block">
+          <div class="title">作业活动风险值对比图</div>
+
+          <div appXalChart [config]="config1" [data]="data1" class="chart-container"></div>
+
+        </div>
+        <div class="block">
+          <div class="title">作业活动风险值对比图</div>
+
+          <div appXalChart [config]="config1" [data]="data1" class="chart-container"></div>
+
+        </div>
+      </div>
+      <div class="block-col">
+        <div class="block map">
+          <div class="title">企业风险四色图</div>
+
+        </div>
+        <div class="mini-block-container">
+          <div class=" no-title mini"></div>
+          <div class=" no-title mini"></div>
+        </div>
+        <div class="notify"></div>
+      </div>
+      <div class="block-col">
+        <div class="block">
+          <div class="title">作业活动风险值对比图</div>
+          <div appXalChart [config]="config3" [data]="data3" class="chart-container"></div>
+        </div>
+        <div class="block">
+          <div class="title">作业活动风险值对比图</div>
+          <div appXalChart [config]="config2" [data]="data2" class="chart-container"></div>
+        </div>
+        <div class="block">
+          <div class="title">作业活动风险值对比图</div>
+          <div appXalChart [config]="config2" [data]="data2" class="chart-container"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
